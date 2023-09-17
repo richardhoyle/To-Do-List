@@ -2,9 +2,17 @@ import { useState } from "react";
 import "./styles.css";
 
 export default function App() {
-  const [newItem, setNewItem] = useState("")
-  
-  // function handleSubmit()
+  const [newItem, setNewItem] = useState("");
+  const [todos, setTodos] = useState([]);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    // not yet how you do it 23m
+    setTodos((currentToDos) => {
+      return setNewItem([...todos, currentToDos]);
+    });
+  }
 
   return (
     <>
